@@ -1,0 +1,35 @@
+//---------------------------------------------------------------------------
+
+#ifndef ArkanoidPPH
+#define ArkanoidPPH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.Graphics.hpp>
+//---------------------------------------------------------------------------
+class TForm1 : public TForm
+{
+__published:	// IDE-managed Components
+	TImage *Ball;
+	TTimer *BallTimer;
+	TImage *Player;
+	TShape *Background;
+	TTimer *PlayerLeft;
+	TTimer *PlayerRight;
+	void __fastcall BallTimerTimer(TObject *Sender);
+	void __fastcall PlayerLeftTimer(TObject *Sender);
+	void __fastcall PlayerRightTimer(TObject *Sender);
+	void __fastcall FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
+	void __fastcall FormKeyUp(TObject *Sender, WORD &Key, TShiftState Shift);
+
+private:	// User declarations
+public:		// User declarations
+	__fastcall TForm1(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TForm1 *Form1;
+//---------------------------------------------------------------------------
+#endif
